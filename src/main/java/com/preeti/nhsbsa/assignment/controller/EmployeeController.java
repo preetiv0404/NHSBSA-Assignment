@@ -77,6 +77,8 @@ public class EmployeeController {
 	return employeeService.retrieveAllEmployees();
 	}
 	
+	
+	@DeleteMapping("employee/delete")
 	//update the employee data
 	@PutMapping("/employees/update/{id}")
 	public ResponseEntity<Employee> updateEmployee(@PathVariable int eid, @RequestBody Employee emp) {
