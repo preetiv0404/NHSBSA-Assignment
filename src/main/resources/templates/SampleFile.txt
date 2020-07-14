@@ -1,0 +1,246 @@
+Get Method
+Retrieve all employees
+http://localhost:8080//employees
+
+Get Method
+Retrieve all skillsets
+http://localhost:8080/skillsets
+Result:
+[
+    {
+        "skillId": 10,
+        "skills": "Cloud Computing"
+    },
+    {
+        "skillId": 9,
+        "skills": "Automation Testing"
+    },
+    {
+        "skillId": 8,
+        "skills": "DataBase Administrator"
+    },
+    {
+        "skillId": 7,
+        "skills": "DevOps"
+    },
+    {
+        "skillId": 6,
+        "skills": "Hibernate"
+    },
+    {
+        "skillId": 5,
+        "skills": "Struts"
+    },
+    {
+        "skillId": 4,
+        "skills": "SpringMVC"
+    },
+    {
+        "skillId": 3,
+        "skills": "SpringBoot MicroServices"
+    },
+    {
+        "skillId": 2,
+        "skills": "JavaScripts"
+    },
+    {
+        "skillId": 1,
+        "skills": "Java"
+    }
+]
+
+Get Method
+Retrieve skills by id
+
+http://localhost:8080/skillsets/5
+Result:
+{
+    "skillId": 5,
+    "skills": "Struts"
+}
+
+Get Method
+Retrieve employee by id
+http://localhost:8080//employees/1
+Result:
+{
+    "employeeId": 1,
+    "name": "Preeti Namdeo",
+    "level": "Expert",
+    "skills": [
+        {
+            "skillId": 1,
+            "skills": "Java"
+        },
+        {
+            "skillId": 2,
+            "skills": "JavaScripts"
+        },
+        {
+            "skillId": 3,
+            "skills": "SpringBoot MicroServices"
+        },
+        {
+            "skillId": 4,
+            "skills": "SpringMVC"
+        },
+        {
+            "skillId": 5,
+            "skills": "Struts"
+        },
+        {
+            "skillId": 6,
+            "skills": "Hibernate"
+        }
+    ]
+}
+
+Get Method
+Retrieve skillsets of an employee by id
+http://localhost:8080//employees/skillsets/1
+Result:
+[
+    {
+        "skillId": 1,
+        "skills": "Java"
+    },
+    {
+        "skillId": 2,
+        "skills": "JavaScripts"
+    },
+    {
+        "skillId": 3,
+        "skills": "SpringBoot MicroServices"
+    },
+    {
+        "skillId": 4,
+        "skills": "SpringMVC"
+    },
+    {
+        "skillId": 5,
+        "skills": "Struts"
+    },
+    {
+        "skillId": 6,
+        "skills": "Hibernate"
+    }
+]
+ 
+ Post method
+ add more skills to skillsets
+ http://localhost:8080//skillsets/addskills
+ 
+ add as text
+ Result : need to be corrected
+ 
+ 
+ Post Method
+ add more employees
+ http://localhost:8080/employees/add
+ Sample data:
+ {
+    "employeeId": 1,
+    "name": "Joy",
+    "level": "Expert",
+    "skills": [
+        {
+            "skillId": 1,
+            "skills": "Java"
+        },
+        {
+            "skillId": 2,
+            "skills": "JavaScripts"
+        },
+       
+        {
+            "skillId": 4,
+            "skills": "SpringMVC"
+        },
+   
+        {
+            "skillId": 6,
+            "skills": "Hibernate"
+        }
+    ]
+}
+
+Result:
+[
+    {
+        "employeeId": 1,
+        "name": "Preeti Namdeo",
+        "level": "Expert",
+        "skills": [
+            {
+                "skillId": 1,
+                "skills": "Java"
+            },
+            {
+                "skillId": 2,
+                "skills": "JavaScripts"
+            },
+            {
+                "skillId": 3,
+                "skills": "SpringBoot MicroServices"
+            },
+            {
+                "skillId": 4,
+                "skills": "SpringMVC"
+            },
+            {
+                "skillId": 5,
+                "skills": "Struts"
+            },
+            {
+                "skillId": 6,
+                "skills": "Hibernate"
+            }
+        ]
+    },
+    {
+        "employeeId": 2,
+        "name": "Shiva Namdeo",
+        "level": "Expert",
+        "skills": [
+            {
+                "skillId": 7,
+                "skills": "DevOps"
+            },
+            {
+                "skillId": 8,
+                "skills": "DataBase Administrator"
+            },
+            {
+                "skillId": 9,
+                "skills": "Automation Testing"
+            },
+            {
+                "skillId": 10,
+                "skills": "Cloud Computing"
+            }
+        ]
+    },
+    {
+        "employeeId": 3,
+        "name": "Joy",
+        "level": "Expert",
+        "skills": [
+            {
+                "skillId": 1,
+                "skills": "Java"
+            },
+            {
+                "skillId": 2,
+                "skills": "JavaScripts"
+            },
+            {
+                "skillId": 4,
+                "skills": "SpringMVC"
+            },
+            {
+                "skillId": 6,
+                "skills": "Hibernate"
+            }
+        ]
+    }
+]
