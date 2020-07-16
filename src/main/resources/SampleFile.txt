@@ -1,6 +1,6 @@
 Get Method
 Retrieve all employees
-http://localhost:8080//employees
+http://localhost:8080/employees
 
 Get Method
 Retrieve all skillsets
@@ -8,44 +8,44 @@ http://localhost:8080/skillsets
 Result:
 [
     {
-        "skillId": 10,
-        "skills": "Cloud Computing"
-    },
-    {
-        "skillId": 9,
-        "skills": "Automation Testing"
-    },
-    {
-        "skillId": 8,
-        "skills": "DataBase Administrator"
-    },
-    {
-        "skillId": 7,
-        "skills": "DevOps"
-    },
-    {
-        "skillId": 6,
-        "skills": "Hibernate"
-    },
-    {
-        "skillId": 5,
-        "skills": "Struts"
-    },
-    {
-        "skillId": 4,
-        "skills": "SpringMVC"
-    },
-    {
-        "skillId": 3,
-        "skills": "SpringBoot MicroServices"
+        "skillId": 1,
+        "skills": "Java"
     },
     {
         "skillId": 2,
         "skills": "JavaScripts"
     },
     {
-        "skillId": 1,
-        "skills": "Java"
+        "skillId": 3,
+        "skills": "SpringBoot MicroServices"
+    },
+    {
+        "skillId": 4,
+        "skills": "SpringMVC"
+    },
+    {
+        "skillId": 5,
+        "skills": "Struts"
+    },
+    {
+        "skillId": 6,
+        "skills": "Hibernate"
+    },
+    {
+        "skillId": 7,
+        "skills": "DevOps"
+    },
+    {
+        "skillId": 8,
+        "skills": "DataBase Administrator"
+    },
+    {
+        "skillId": 9,
+        "skills": "Automation Testing"
+    },
+    {
+        "skillId": 10,
+        "skills": "Cloud Computing"
     }
 ]
 
@@ -61,7 +61,7 @@ Result:
 
 Get Method
 Retrieve employee by id
-http://localhost:8080//employees/1
+http://localhost:8080/employees/1
 Result:
 {
     "employeeId": 1,
@@ -97,7 +97,7 @@ Result:
 
 Get Method
 Retrieve skillsets of an employee by id
-http://localhost:8080//employees/skillsets/1
+http://localhost:8080/employees/skillsets/1
 Result:
 [
     {
@@ -128,10 +128,59 @@ Result:
  
  Post method
  add more skills to skillsets
- http://localhost:8080//skillsets/addskills
- 
- add as text
- Result : need to be corrected
+ http://localhost:8080/skillsets/add
+ Sample Data:
+ {
+             "skillId": 6,
+             "skills": "Ui/UX Design"
+         }
+
+ Result :[
+             {
+                 "skillId": 1,
+                 "skills": "Java"
+             },
+             {
+                 "skillId": 2,
+                 "skills": "JavaScripts"
+             },
+             {
+                 "skillId": 3,
+                 "skills": "SpringBoot MicroServices"
+             },
+             {
+                 "skillId": 4,
+                 "skills": "SpringMVC"
+             },
+             {
+                 "skillId": 5,
+                 "skills": "Struts"
+             },
+             {
+                 "skillId": 6,
+                 "skills": "Hibernate"
+             },
+             {
+                 "skillId": 7,
+                 "skills": "DevOps"
+             },
+             {
+                 "skillId": 8,
+                 "skills": "DataBase Administrator"
+             },
+             {
+                 "skillId": 9,
+                 "skills": "Automation Testing"
+             },
+             {
+                 "skillId": 10,
+                 "skills": "Cloud Computing"
+             },
+             {
+                 "skillId": 11,
+                 "skills": "Ui/UX Design"
+             }
+         ]
  
  
  Post Method
@@ -139,7 +188,7 @@ Result:
  http://localhost:8080/employees/add
  Sample data:
  {
-    "employeeId": 1,
+    "employeeId": 3,
     "name": "Joy",
     "level": "Expert",
     "skills": [
@@ -244,3 +293,73 @@ Result:
         ]
     }
 ]
+
+Update Method:
+update an employee
+http://localhost:8080/employees/update/1
+Sample data:
+{
+    "employeeId": 1,
+    "name": "Preeti Namdeo",
+    "level": "Expert",
+    "skills": [
+        {
+            "skillId": 2,
+            "skills": "JavaScripts"
+        },
+
+        {
+            "skillId": 5,
+            "skills": "Struts"
+        },
+        {
+            "skillId": 6,
+            "skills": "Hibernate"
+        }
+    ]
+}
+
+Result:
+{
+    "employeeId": 1,
+    "name": "Preeti Namdeo",
+    "level": "Expert",
+    "skills": [
+        {
+            "skillId": 2,
+            "skills": "JavaScripts"
+        },
+        {
+            "skillId": 5,
+            "skills": "Struts"
+        },
+        {
+            "skillId": 6,
+            "skills": "Hibernate"
+        }
+    ]
+}
+Update Method:
+update skillsets
+http://localhost:8080/skillsets/update/1
+Sample data:
+{
+    "skillId": 1,
+    "skills": "Json"
+}
+Result:{
+           "skillId": 1,
+           "skills": "Json"
+       }
+
+Delete Method:
+delete employee by employee id
+http://localhost:8080/employees/delete/1
+Result : Employee deleted
+Can be checked by fetching employees again
+
+Delete Method:
+delete skill by skill id
+http://localhost:8080/skillsets/delete/1
+Result : SkillSets deleted
+Can be checked by fetching skillsets again
